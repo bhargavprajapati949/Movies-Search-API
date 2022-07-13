@@ -60,8 +60,9 @@ def signup():
     name = data.get('name')
     email = data.get('email')
     password = data.get('password')
+    is_admin = data.get('is_admin')
 
-    user = User.sign_up(name, email, password)
+    user = User.sign_up(name, email, password, is_admin)
     return user.to_json_for_user(), 201
     
 

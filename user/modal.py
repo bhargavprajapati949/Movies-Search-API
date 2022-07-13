@@ -16,7 +16,7 @@ class User():
         self.is_admin = is_admin
 
     @staticmethod
-    def sign_up(name, email, password):
+    def sign_up(name, email, password, is_admin=False):
 
         if User.get_user_by_email_if_exist(email):            
             raise Exception("Account with email {} is already exist".format(escape(email)))
@@ -24,7 +24,8 @@ class User():
         user = User(
             name=name,
             email=email,
-            hashed_password=User.get_hashed_password(password)
+            hashed_password=User.get_hashed_password(password),
+            is_admin=is_admin
         )
         
         user = db_users.add_user(user.__to_json_for_db())
@@ -50,7 +51,6 @@ class User():
             return True
         else:
             raise ServerError('Unable to delete user')
-
 
 
     def __to_json_for_db(self):

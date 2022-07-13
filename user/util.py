@@ -18,6 +18,9 @@ registerReqSchema = {
       "password": {
         "type": "string",
         "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+      },
+      "is_admin": {
+        "type": "boolean"
       }
     },
     "required": ["name", "email", "password"],
