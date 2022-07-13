@@ -13,7 +13,7 @@ class Movie():
     def __init__(self, movie):
         if movie.get('_id', None):
             self.id = str(movie.get('_id'))
-            movie.pop('_id')
+            # movie.pop('_id')
         self.name = movie.get('name')
         self.imdb_score = movie.get('imdb_score')
         self.popularity = movie.get('popularity')

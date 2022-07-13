@@ -15,6 +15,7 @@ jsonschema==4.7.0
 MarkupSafe==2.1.1
 PyJWT==2.4.0
 pymongo==4.1.1
+pymongo[srv]
 pyrsistent==0.18.1
 typing-extensions==4.3.0
 Werkzeug==2.1.2
