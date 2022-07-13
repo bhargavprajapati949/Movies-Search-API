@@ -64,7 +64,7 @@ def search_movie(query):
 
     sort_query = []
 
-    limit = query['limit']
+    limit = query.get('limit', None)
 
     sort_by_attr = query.get('sort_by_attr')
     sort_by_order = query.get('sort_by_order')
@@ -137,4 +137,7 @@ def search_movie(query):
 
     print(query)
 
-    return list(movies.find(query).sort(sort_query).limit(limit))
+    if limit:
+        return list(movies.find(query).sort(sort_query).limit(limit))
+    else:
+        return list(movies.find(query).sort(sort_query))

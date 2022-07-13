@@ -71,19 +71,14 @@ def delete_movie():
 def movies(movie_id):
     return Movie.get_movie_by_id(movie_id).json_val, 200
 
-default_limit = 10
-max_limit = 20
-
 
 @app.route('/movie', methods=['GET'])
 def search_movie():
     
     limit = request.args.get('limit')
     if limit and limit.isdigit():
-        limit = min(int(limit), max_limit)
-    else:
-        limit = default_limit
-
+        limit = int(limit)
+        
     # offset = request.args.get('offset')
     # if offset and offset.isdigit():
     #     offset = int(offset)
