@@ -1,7 +1,6 @@
 import json
 import os
 from bson import ObjectId
-from werkzeug.exceptions import HTTPException
 
 from flask import Flask
 from errors import handle_exception
@@ -11,6 +10,9 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET_KEY')
 
+@app.route("/", methods=['GET'])
+def homepage():
+    return "This is my homepage"
 
 class JSONEncoder(json.JSONEncoder):
     ''' extending json-encoder class'''
