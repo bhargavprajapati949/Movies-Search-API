@@ -2,7 +2,7 @@ import json
 import os
 from bson import ObjectId
 
-from flask import Flask
+from flask import Flask, redirect
 from errors import handle_exception
 
 app = Flask(__name__)
@@ -12,7 +12,8 @@ app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET_KEY')
 
 @app.route("/", methods=['GET'])
 def homepage():
-    return "This is my homepage"
+    redirect('https://github.com/bhargavprajapati949/Movies-Search-API#readme')
+    # return "This is my homepage"
 
 class JSONEncoder(json.JSONEncoder):
     ''' extending json-encoder class'''

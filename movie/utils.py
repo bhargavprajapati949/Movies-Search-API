@@ -103,7 +103,7 @@ searchMovieReqSchema = {
             "type" : "object",
             "properties" : {
                 "by_attr": {
-                    "type": "string"
+                    "enum": ["name", "director", "popularity","imdb_score"]
                 },
                 "by_order": {
                     "enum" : ["ascending", "descending"]
