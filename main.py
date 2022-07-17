@@ -12,7 +12,7 @@ app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET_KEY')
 
 @app.route("/", methods=['GET'])
 def homepage():
-    redirect('https://github.com/bhargavprajapati949/Movies-Search-API#readme')
+    return redirect("https://github.com/bhargavprajapati949/Movies-Search-API")
     # return "This is my homepage"
 
 class JSONEncoder(json.JSONEncoder):
